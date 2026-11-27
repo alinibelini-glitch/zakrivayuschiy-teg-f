@@ -14,7 +14,7 @@
   min-inline-size: 320px;
   min-block-size: 100dvb;
   font-family: var(--main-font-family);
-  font-variation-settings: var(--main-card-text-weight);
+  font-variation-settings: "wght" var(--main-card-text-weight);
   background-image: var(--bg-gradient);
   background-attachment: fixed;
   background-size: cover;

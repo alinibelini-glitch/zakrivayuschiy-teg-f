@@ -131,8 +131,11 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 38px;
+  height: 38px;
   background-color: transparent;
-  border: none;
+  border: 2px solid transparent;
+  transition: border-color 0.3s ease;
 }
 
 .save-button {
@@ -230,7 +233,7 @@ button {
 }
 
 .image-invert {
-  filter: invert(0.1);
+  filter: invert(0.2) brightness(130%);
 }
 
 .button-accent {
@@ -271,14 +274,6 @@ box-shadow: 2px 2px 0px var(--accent-color);
   color: #fff;
   z-index: 1;
   mix-blend-mode: difference;
-}
-
-.card__icon-button {
-  width: 38px;
-  height: 38px;
-  border: 2px solid transparent;
-  background-color: transparent;
-  transition: border-color 0.3s ease;
 }
 
 .card__icon-button:focus {

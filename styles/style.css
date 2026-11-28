@@ -26,6 +26,7 @@
 .main-content {
   width: var(--content-width);
   margin-inline: auto;
+  padding-bottom: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -33,7 +34,7 @@
 }
 
 .header {
-  min-block-size: 327px;
+  min-block-size: 368px;
   width: var(--content-width);
   padding: var(--header-padding);
   margin-top: 100px;
@@ -51,10 +52,12 @@
 
 .header-title {
   font-size: var(--main-title-size);
+  font-weight: var(--main-card-text-weight);
 }
 
 .header-text {
-  font-size: 14px;
+  font-size: 23px;
+  font-weight: var(--main-card-text-weight);
 }
 
 .card {
@@ -64,9 +67,10 @@
 }
 
 .card-title {
-  padding: 10px;
+  height: 30px;
+  padding: 5px 10px;
   font-size: 18px;
-  font-weight: var(--title-card-text-weight);
+  font-variation-settings: "wght" var(--title-card-text-weight);
   line-height: 1.1;
 }
 
@@ -74,6 +78,7 @@
   display: block;
   width: 100%;
   object-fit: cover;
+  object-position: center;
 }
 
 .image-wrapper {
@@ -96,8 +101,9 @@
 }
 
 @supports (text-stroke: 1px #fff) {
-  span {
-    text-stroke: 1px #fff;
+  .label-text {
+    -webkit-text-stroke: 1px #fff;
+    text-shadow: none;
   }
 }
 
@@ -160,7 +166,8 @@ button {
 .dialog {
   display: none;
   width: 353px;
-  height: 191px;
+  max-width: 100%;
+  min-height: 191px;
   font-family: var(--accent-font-family);
   font-size: 14px;
   text-transform: uppercase;
@@ -176,12 +183,14 @@ button {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 100%;
   gap: 30px;
 }
 
 .dialog-icon-and-text {
   display: flex;
   flex-direction: row;
+  width: 100%;
   gap: 20px;
 }
 
@@ -196,7 +205,7 @@ button {
 }
 
 .dialog-button {
-  width: 293px;
+  width: 100%;
   height: 38px;
 }
 
@@ -274,6 +283,11 @@ box-shadow: 2px 2px 0px var(--accent-color);
   color: #fff;
   z-index: 1;
   mix-blend-mode: difference;
+  font-weight: var(--main-card-text-weight);
+}
+
+.dialog-button .button__text {
+  text-transform: uppercase;
 }
 
 .card__icon-button:focus {
@@ -288,6 +302,11 @@ box-shadow: 2px 2px 0px var(--accent-color);
   display: block;
   flex-shrink: 0;
   transform-origin: center
+}
+
+.like-icon .heart {
+  transform-box: fill-box;
+  transform-origin: center;
 }
 
 .sparks {
@@ -350,23 +369,32 @@ box-shadow: 2px 2px 0px var(--accent-color);
 }
 
 @media (width <= 375px) {
+  .header {
+    min-block-size: 327px;
+  }
+
+  .header-text {
+  font-size: 14px;
+  }
+
   .save-button {
     width: 306px;
     height: 84px;
     flex-direction: column;
   }
 
+  .dialog {
+    width: 341px;
+    max-width: 100%;
+  }
+
+  .dialog-content {
+    width: 261px;
+  }
+
   .floppy-icon {
     width: 28px;
     height: 28px;
-  }
-
-  .dialog {
-    width: 341px;
-  }
-
-  .dialog-button {
-    width: 261px;
   }
   
   .dialog-icon-and-text {
